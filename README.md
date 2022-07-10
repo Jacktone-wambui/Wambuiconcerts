@@ -6,7 +6,7 @@ The backend part,php has been used to connect to mysql
            The index.html is the first part,then one can signup or opt to just view events.If you signup,a login page will be
            brought then you can view products and place them in the cart for payment.
            
-           <h1> The first page is shown below</h1>
+           <h> The first page is shown below </h>
            
 ![frontpage1](https://user-images.githubusercontent.com/91588670/178142241-542377e7-2de0-4245-8d73-8741c6a7e5d2.PNG)
  
