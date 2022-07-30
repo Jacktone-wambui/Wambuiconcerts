@@ -155,3 +155,9 @@ td
     padding: 10px;
     background-color: rgba(247, 241, 241, 0.801);
 }
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  [class*="col-"] {
+    width: 100%;
+  }
+}
