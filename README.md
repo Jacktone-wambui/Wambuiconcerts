@@ -1,7 +1,10 @@
 # WAMBUI-concerts-full-website-using-html-css-and-bootstrap
-Livesite :https://jacktone-wambui.github.io/Wambuiconcerts/
+
 
 This is a full responsive website created using html,css and boostrap
+
+
+[Livesite](https://jacktone-wambui.github.io/Wambuiconcerts/)
 
 The backend part,php has been used to connect to mysql
 
