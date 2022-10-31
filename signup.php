@@ -16,7 +16,7 @@
 	
 	$name = $_POST['Name'];
 	$email = $_POST['Email'];
-	$password = $_POST['password'];
+	$password = $_POST['Password'];
 	$contact = $_POST['Contact'];
 	$city = $_POST['City'];
 	$address = $_POST['Address'];
@@ -30,7 +30,7 @@
 	if($num == 1){
 	echo" Username Already Taken";
 	}else{
-	    $reg= "insert into usertable(Name,Email,Password,Contact,City,Address) values('$name','$email','$password','$contact','$city','$address')";
+	    $reg= "insert into signup(Name,Email,Password,Contact,City,Address) values('$name','$email','$password','$contact','$city','$address')";
 	    mysqli_query($con, $reg);
 	    echo" Registration Successful";
 	}
