@@ -56,11 +56,11 @@ if (isset($_POST['op']) && isset($_POST['np'])
 
     
 }else{
-	header("Location: change-password.php");
+	header("Location: settings.html");
 	exit();
 }
 
 }else{
-     header("Location: index.php");
+     header("Location: index.html");
      exit();
 }
