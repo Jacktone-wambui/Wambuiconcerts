@@ -12,5 +12,3 @@ $con = mysqli_connect('localhost','root','');
 	$contact = $_POST['Contact'];
 	$city = $_POST['City'];
 	$address = $_POST['Address'];
-
-    

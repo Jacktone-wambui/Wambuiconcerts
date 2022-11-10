@@ -31,8 +31,7 @@
 		  echo '<script type="text/javascript"> alert(" Login successful!") </script>';
 	      header('location:product.html');
 	}else{
-		echo '<script type="text/javascript"> alert(" Wrong Credentials!") </script>';
-	    header('location:login.html');
+	    header('location:login.html?error=Incorect User name or password');
 	}
 	?>
 </body>
