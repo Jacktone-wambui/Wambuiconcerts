@@ -1,4 +1,7 @@
 <?php
+	session_start();
+	header('location:settings.html');
+
  $con = mysqli_connect('localhost','root','');
 	
  mysqli_select_db($con, 'warrenconcerts');
