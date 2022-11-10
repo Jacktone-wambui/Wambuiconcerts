@@ -30,7 +30,7 @@
 		  $_SESSION['Email'] = $email;
 	      header('location:product.html');
 	}else{
-	    header('location:index.html');
+	    header('location:login.html');
 	}
 	?>
 </body>
