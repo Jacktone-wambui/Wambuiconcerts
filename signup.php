@@ -28,11 +28,11 @@
 	$num = mysqli_num_rows($result);
 	
 	if($num == 1){
-	echo" Username Already Taken";
+		echo '<script type="text/javascript"> alert(" username taken!") </script>';
 	}else{
 	    $reg= "insert into signup(Name,Email,Password,Contact,City,Address) values('$name','$email','$password','$contact','$city','$address')";
 	    mysqli_query($con, $reg);
-	    echo" Registration Successful";
+		echo '<script type="text/javascript"> alert(" Thank you,Registration successful!") </script>';
 	}
 	?>
 </body>
