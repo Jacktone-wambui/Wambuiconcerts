@@ -1,60 +1,66 @@
-<?php
-	session_start();
-	header('location:settings.html');
+<?php 
+session_start();
 
- $con = mysqli_connect('localhost','root','');
-	
- mysqli_select_db($con, 'warrenconcerts');
+if (isset($_SESSION['Name']) && isset($_SESSION['Password'])) {
 
-if(isset($_POST['change_password'])){
-	$currentPassword = $_POST['Old Password'];
-	$password = $_POST['NewPassword'];
-	$passwordConfirm = $_POST['rtnp'];
+	include "db_conn.php";
 
-	$sql="SELECT Password from signup where Email='$email'";
-	$res = mysqli_query($con,$sql);
+if (isset($_POST['op']) && isset($_POST['np'])
+    && isset($_POST['c_np'])) {
 
-	$row = mysqli_fetch_assoc($res);
-	if(password_verify($currentPassword,$row['Password'])){
-if($passwordConfirm ==''){
-		 $error[] = 'Please confirm the password.';
-	 }
-	 if($password != $passwordConfirm){
-		 $error[] = 'Passwords do not match.';
-	 }
-	   if(strlen($password)<5){ // min 
-		 $error[] = 'The password is 6 characters long.';
-	 }
-	 
-	  if(strlen($password)>20){ // Max 
-		 $error[] = 'Password: Max length 20 Characters Not allowed';
-	 }
-if(!isset($error))
-{
-   $options = array("cost"=>4);
- $password = password_hash($password,PASSWORD_BCRYPT,$options);
+	function validate($data){
+       $data = trim($data);
+	   $data = stripslashes($data);
+	   $data = htmlspecialchars($data);
+	   return $data;
+	}
 
-  $result = mysqli_query($con,"UPDATE signup SET password='$password' WHERE Email='$email'");
-		if($result)
-		{
-	header("location:product.html?password_updated=1");
-		}
-		else 
-		{
-		 $error[]='Something went wrong';
-		}
+	$op = validate($_POST['op']);
+	$np = validate($_POST['np']);
+	$c_np = validate($_POST['c_np']);
+    
+    if(empty($op)){
+      header("Location: settings.html?error=Old Password is required");
+	  exit();
+    }else if(empty($np)){
+      header("Location: settings.html?error=New Password is required");
+	  exit();
+    }else if($np !== $c_np){
+      header("Location: settings.html?error=The confirmation password  does not match");
+	  exit();
+    }else {
+    	// hashing the password
+    	$op = md5($op);
+    	$np = md5($np);
+        $email = $_SESSION['Email'];
+
+        $sql = "SELECT Password
+                FROM signup WHERE 
+                Email='$email' AND Password='$op'";
+        $result = mysqli_query($conn, $sql);
+        if(mysqli_num_rows($result) === 1){
+        	
+        	$sql_2 = "UPDATE signup
+        	          SET Password='$np'
+        	          WHERE Email='$email'";
+        	mysqli_query($conn, $sql_2);
+        	header("Location: settings.html?success=Your password has been changed successfully");
+	        exit();
+
+        }else {
+        	header("Location: settings.html?error=Incorrect password");
+	        exit();
+        }
+
+    }
+
+    
+}else{
+	header("Location: change-password.php");
+	exit();
 }
 
-	 } 
-	 else 
-	 {
-		 $error[]='Current password does not match.'; 
-	 }   
- }
-	 if(isset($error)){ 
-
-foreach($error as $error){ 
-echo '<p class="errmsg">'.$error.'</p>'; 
+}else{
+     header("Location: index.php");
+     exit();
 }
-}
-	 ?> 
