@@ -15,7 +15,7 @@
 	
 	$name = $_POST['Name'];
 	$email = $_POST['Email'];
-	$password = $_POST['password'];
+	$password = $_POST['Password'];
 	$contact = $_POST['Contact'];
 	$city = $_POST['City'];
 	$address = $_POST['Address'];
