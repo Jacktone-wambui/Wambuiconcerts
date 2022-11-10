@@ -58,5 +58,3 @@ echo '<p class="errmsg">'.$error.'</p>';
 }
 }
 	 ?> 
-    
-}
