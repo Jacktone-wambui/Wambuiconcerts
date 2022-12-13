@@ -75,26 +75,28 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <!-- The form -->
-<form class="example" action="action_page.php">
-  <input type="text" placeholder="Search for your favourite events..." name="search">
+
+form class="example" action="">
+  <input type="text" placeholder="Search for your favourite events..." id="searchbar" onkeyup="search_events()" name="search">
   <button type="submit"><i class="fa fa-search"></i></button>
 </form>
-	    
-<!-- 	     <script>
-      const f = document.getElementById('form');
-      const q = document.getElementById('query');
-      const google = 'https://www.google.com/search?q=site%3A+';
-      const site = 'https://jacktone-wambui.github.io/Wambuiconcerts/product.html';
-
-      function submitted(event) {
-        event.preventDefault();
-        const url = google + site + '+' + q.value;
-        const win = window.open(url, '_blank');
-        win.focus();
-      }
-
-      f.addEventListener('submit', submitted);
-    </script> -->
+        
+        <script>
+        function search_events() {
+            let input = document.getElementById('searchbar').value
+            input=input.toLowerCase();
+            let x = document.getElementsByClassName('row text-center');
+              
+            for (i = 0; i < x.length; i++) { 
+                if (!x[i].innerHTML.toLowerCase().includes(input)) {
+                    x[i].style.display="none";
+                }
+                else {
+                    x[i].style.display="list-item";                 
+                }
+            }
+        }
+    </script>
 	    
 		</p>
         <div class="row text-center">
