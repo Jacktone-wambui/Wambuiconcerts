@@ -75,16 +75,16 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <!-- The form -->
-<form class="example" action="">
+<form class="example">
   <input type="text" placeholder="Search for your favourite events..." id="searchbar" onkeyup="search_events()" name="search">
-  <button type="submit"><i class="fa fa-search"></i></button>
+  <button type=""><i class="fa fa-search"></i></button>
 </form>
         
         <script>
         function search_events() {
             let input = document.getElementById('searchbar').value
             input=input.toLowerCase();
-            let x = document.getElementsByClassName('row text-center');
+            let x = document.getElementsByClassName('events');
               
             for (i = 0; i < x.length; i++) { 
                 if (!x[i].innerHTML.toLowerCase().includes(input)) {
@@ -99,6 +99,7 @@
 
 		</p>
         <div class="row text-center">
+            <div class="events">
             <div class="cameras col-md-3 col-sm-6">
                 <div class="thumbnail">
                     <img src="img/5.jpg" alt="camera_img">
@@ -111,7 +112,9 @@
                     </div>
                 </div>
             </div>
-
+        </div>
+            
+        <div class="events">
             <div class="cameras col-md-3 col-sm-6">
                 <div class="thumbnail">
                     <img src="img/2.jpg" alt="camera_img">
@@ -124,7 +127,9 @@
                     </div>
                 </div>
             </div>
-
+            </div>
+             
+            <div class="events">
             <div class="cameras col-md-3 col-sm-6">
                 <div class="thumbnail">
                     <img src="img/3.jpg" alt="camera_img">
@@ -137,7 +142,9 @@
                     </div>
                 </div>
             </div>
-
+            </div>
+ 
+            <div class="events">
             <div class="cameras col-md-3 col-sm-6">
                 <div class="thumbnail">
                     <img src="img/4.jpg" alt="camera_img">
@@ -150,9 +157,11 @@
                     </div>
                 </div>
             </div>
+            </div>
         </div>
 
         <div class="row text-center">
+            <div class="events">
             <div class="watches col-md-3 col-sm-6">
                 <div class="thumbnail">
                     <img src="img/9.jpg" alt="watch_img">
@@ -165,7 +174,9 @@
                     </div>
                 </div>
             </div>
+            </div>
 
+            <div class="events">
             <div class="watches col-md-3 col-sm-6">
                 <div class="thumbnail">
                     <img src="img/10.jpg" alt="watch_img">
@@ -178,7 +189,9 @@
                     </div>
                 </div>
             </div>
+            </div>
 
+            <div class="events">
             <div class="watches col-md-3 col-sm-6">
                 <div class="thumbnail">
                     <img src="img/11.jpg" alt="watch_img">
@@ -191,7 +204,9 @@
                     </div>
                 </div>
             </div>
+            </div>
 
+            <div class="events">
             <div class="watches col-md-3 col-sm-6">
                 <div class="thumbnail">
                     <img src="img/12.jpg" alt="watch_img">
@@ -204,9 +219,11 @@
                     </div>
                 </div>
             </div>
+            </div>
         </div>
 
         <div class="row text-center">
+            <div class="events">
             <div class="shirts col-md-3 col-sm-6">
                 <div class="thumbnail">
                     <img src="img/8.jpg" alt="shirt_img">
@@ -219,7 +236,9 @@
                     </div>
                 </div>
             </div>
+            </div>
 
+            <div class="events">
             <div class="shirts col-md-3 col-sm-6">
                 <div class="thumbnail">
                     <img src="img/6.jpg" alt="shirt_img">
@@ -232,7 +251,9 @@
                     </div>
                 </div>
             </div>
+            </div>
 
+            <div class="events">
             <div class="shirts col-md-3 col-sm-6">
                 <div class="thumbnail">
                     <img src="img/13.jpg" alt="shirt_img">
@@ -246,7 +267,9 @@
                     </div>
                 </div>
             </div>
+            </div>
 
+            <div class="events">
             <div class="shirts col-md-3 col-sm-6">
                 <div class="thumbnail">
                     <img src="img/14.jpg" alt="shirts_img">
@@ -259,6 +282,7 @@
                         </button>
                     </div>
                 </div>
+            </div>
             </div>
         </div>
     </div>
